@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+div.main{
+    width: 500px;
+    margin: 50px auto 50px auto;
+}
+
+h2{
+    text-align: center;
+    padding: 20px;
+    font-family: sans-serif;
+}
+
+div.update{
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    font-size: 18px;
+    border-bottom: 10px;
+    border: 1px solid rgba(255, 255,255, 0.3);
+    box-shadow: 2px 2px 15px rgba(0,0,0,0.3);
+    color: #fff;
+}
+
+form#update{
+    margin: 50px;
+}
+
+input#update{
+    background-color: orange;
+    color: black;
+    font-size: 20px;
+    margin-left: 150px;
+    border: orange;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.input-row{
+    display: flex;
+    justify-content:space-evenly;
+    padding: 5;
+    height: 25px;
+}
+

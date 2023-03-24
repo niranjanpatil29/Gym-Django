@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/get.css' %}">
+    <title>Gym</title>
+</head>
+<body>
+    <nav>
+        <h1>GYM</h1>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="">Membership</a>
+                <ul>
+					<li><a href="/get">Get Membership</a></li>
+                    <li><a href="/update">Update Membership</a></li>
+                    <li><a href="/cancel">Cancel Membership</a></li>
+                </ul>
+            </li>
+            <li><a href="/login">Login</a></li>
+            <li><a href="/register">Register</a></li>
+            <li><a href="">Logout</a></li>
+            
+        </ul>
+    </nav>
+    <div class="main">
+        <div class="get">
+            <h2>Get Membership Here</h2>
+			
+            <form id="get" action="/get" method="POST"/>
+            {% csrf_token %}
+                <label>Enter Username: </label><br><input type='text' id ='uname' name='uname' placeholder = 'Your Username'></br></br>
+                
+                <label>Enter Phone No:   </label><br><input type='text' id ='phone'name='phone' placeholder='Your Phone Number'></br></br>
+        
+                <label>Enter Email:   </label><br><input type='email' id ='email'name='email' placeholder='Email'></br></br>
+
+                <div class="input-row">
+                    <label>Date From: </label><br><input type='date' id ='fdate' name='fdate' placeholder='Select date'></br></br>
+
+                <label>Date To: </label><br><input type='date' id ='tdate' name='tdate' placeholder='Select date'></div></br>
+				
+				<label>Gender :   </label><br>&nbsp;&nbsp;&nbsp;<input type='radio' id ='male' value="Male" name='gender'>&nbsp;
+        
+                <span id="male">Male</span>&nbsp;&nbsp;&nbsp;<input type='radio'  id ='female' value="Female" name='gender'>&nbsp;
+        
+                <span id="male">Female</span><br><br>
+				
+				<input type='submit' id="get" name='submit' value='Get'/>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

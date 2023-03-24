@@ -1,0 +1,65 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/register.css' %}">
+    <title>Buy Membership</title>
+</head>
+<body>
+    <body>
+        <nav>
+            <h1>GYM</h1>
+            <ul>
+                <li><a href="/">Home</a></li>
+                {% if user.is_authenticated %}
+                <li><a href="">Membership</a>
+                    <ul>
+						<li><a href="/get">Get Membership</a></li>
+                        <li><a href="/update">Update Membership</a></li>
+                        <li><a href="/cancel">Cancel Membership</a></li>
+                    </ul>
+                </li>
+                <li><a href="/logout">Logout</a></li>
+                {% else %}
+                <li><a href="/register">Register</a></li>
+                <li><a href="/login">Login</a></li>
+                
+                {% endif %}
+                
+                
+            </ul>
+        </nav>
+    
+    <div class="main">
+        <div class="register">
+            <h2>Register Here</h2>
+            <form id="register" action="/register" method="POST">
+             {% csrf_token %}
+				<label>First Name: </label><input type='text' id ='fname' name='fname' placeholder = 'First Name' required></br></br>
+
+				<label>Last Name: </label><input type='text' id ='lname'name='lname' placeholder = 'Last Name' required></br></br>
+
+				<label>Username: </label><input type='text' id ='uname'name='uname' placeholder='Username' required></br></br>
+
+				<label>Email: </label><input type='email' id ='email'name='email' placeholder='Email' required></br></br>
+
+				<label>Password: </label><input type='password' id ='pass1'name='pass1' placeholder='Password' required></br></br>
+
+				<label>Confirm Password: </label><input type='password' id ='pass2'name='pass2' placeholder='Confirm Password' required></br></br>
+
+				<input type='submit' id="register" name='submit' value='Register'/>
+            </form>
+
+        </div>
+        
+
+    </div>
+    
+    
+</body>
+</html>

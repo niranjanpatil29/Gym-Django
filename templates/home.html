@@ -1,0 +1,41 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <title>Gym</title>
+</head>
+<body>
+    <nav>
+        <h1>FITNESS HUB</h1>
+        <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="">Gallery</a></li>
+            {% if user.is_authenticated %}
+            <li><a href="">Membership</a>
+                <ul>
+					<li><a href="/get">Get Membership</a></li>
+                    <li><a href="/update">Update Membership</a></li>
+                    <li><a href="/cancel">Cancel Membership</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Welcome! {{user.username}}</a></li>
+            <li><a href="/logout">Logout</a></li>
+            {% else %}
+			<li><a href="/register">Register</a></li>
+			<li><a href="/login">Login</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+    <div>
+        <h3>Discover your strength and reach your goals <br>at <br><stronge>FITNESS HUB</stronge></h3><br>
+        <a href="/register" id="login" name='submit' value=''>Start Your Journey Now</a>
+    </div>
+    
+</body>
+</html>
